@@ -17,7 +17,9 @@ body{
 }
 
 /* *fonts size and weights */
-
+.font-16{
+    font-size: 16px;
+}
 .font-18{
     font-size: 18px;
 }
@@ -39,4 +41,19 @@ body{
 
 .nav-link:hover{
     color: #5D5FEF;
+    text-align: justify;
 }
+
+.justify-text{
+    text-align: justify;
+}
+/* *Header end */
+
+/* *news item starts here */
+.details-btn>button{
+    color: #5D5FEF;
+}
+.details-btn>button:hover{
+    color: #5D5FEF;
+}
+/* *news item Ends here */

@@ -24,10 +24,19 @@ const displayCategory = (datas) => {
 		categoryContainer.appendChild(li);
 	});
 };
-// *load All News category by categories id
-// *create spinner Functio
 
+// *create spinner Functio
+const spinner = (isLoading) => {
+	const spinnerContainer = document.getElementById('spinner');
+	if (isLoading) {
+		spinnerContainer.classList.remove('d-none');
+	} else {
+		spinnerContainer.classList.add('d-none');
+	}
+};
+// *load All News category by categories id
 const loadNewscategory = async (id, name) => {
+	spinner(true);
 	const url = ` https://openapi.programming-hero.com/api/news/category/${id}`;
 
 	try {
@@ -49,6 +58,11 @@ const displayNewsItem = (datas, name) => {
         <span class="color-primary">${name}:</span> ${datas.length} News Found
     `;
 	lengthContainer.appendChild(lengthText);
+
+	// *spinner off when get blank data
+	if (datas.length === 0) {
+		spinner(false);
+	}
 
 	// *news item dynamic starts
 	const cardContainer = document.getElementById('card-container');
@@ -116,5 +130,6 @@ const displayNewsItem = (datas, name) => {
         </div>
         `;
 		cardContainer.appendChild(card);
+		spinner(false);
 	});
 };

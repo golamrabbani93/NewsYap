@@ -50,10 +50,21 @@ body{
 /* *Header end */
 
 /* *news item starts here */
+.card{
+    margin-bottom: 1rem!important;
+    margin-top: 3rem!important;
+    border: 0!important;
+}
+.author-img>img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
 .details-btn>button{
     color: #5D5FEF;
 }
 .details-btn>button:hover{
     color: #5D5FEF;
 }
+
 /* *news item Ends here */

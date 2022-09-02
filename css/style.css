@@ -1,0 +1,26 @@
+/* *google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* *Common styles */
+
+/* *color */
+
+.color-primary{
+    color: #5D5FEF;
+}
+.color-gray{
+    color:#949494
+}
+
+/* *fonts size */
+
+.font-18{
+    font-size: 18px;
+}
+.font-24{
+    font-size: 24px;
+}

@@ -54,6 +54,12 @@ const displayNewsItem = (datas, name) => {
 	const cardContainer = document.getElementById('card-container');
 	cardContainer.textContent = '';
 
+	// *shoting Total View function
+	datas.sort((a, b) => {
+		const short = b.total_view - a.total_view;
+		return short;
+	});
+
 	datas.forEach((data) => {
 		// *create single-card
 		const card = document.createElement('div');

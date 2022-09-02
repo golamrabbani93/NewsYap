@@ -11,6 +11,7 @@ const loadCategory = async () => {
 };
 loadCategory();
 
+// *display category function
 const displayCategory = (datas) => {
 	// *find category Container
 	const categoryContainer = document.getElementById('category-box');
@@ -24,3 +25,16 @@ const displayCategory = (datas) => {
 		categoryContainer.appendChild(li);
 	});
 };
+// *load All News category by categories id
+const loadNewscategory = async (id) => {
+	const url = ` https://openapi.programming-hero.com/api/news/category/${id}`;
+
+	try {
+		const res = await fetch(url);
+		const datas = await res.json();
+		console.log(datas.data);
+	} catch (error) {
+		console.log(error);
+	}
+};
+loadNewscategory('01');

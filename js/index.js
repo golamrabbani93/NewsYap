@@ -55,7 +55,7 @@ const displayNewsItem = (datas, name) => {
 	lengthContainer.textContent = '';
 	const lengthText = document.createElement('h3');
 	lengthText.innerHTML = `
-        <span class="color-primary">${name}:</span> ${datas.length} News Found
+        <span class="color-primary">${name}:</span> ${datas.length ? datas.length : 'No'} News Found
     `;
 	lengthContainer.appendChild(lengthText);
 
@@ -108,14 +108,14 @@ const displayNewsItem = (datas, name) => {
                             <div class="author-details ms-2">
                                 <h4 class="font-16 m-0 mb-1">
                                 ${data.author.name ? data.author.name : 'No data'}</h4>
-                                <h4 class="font-16 color-gray">${data.author.published_date}</h4>
+                                <h4 class="font-16 color-gray">
+								${data.author.published_date ? data.author.published_date : 'No data'}</h4>
                             </div>
                         </div>
                         <!-- *total viwes -->
                         <div class="views">
-                            <span class="fw-700"><i class="fa-regular fa-eye"></i> ${
-															data.total_view
-														}</span>
+                            <span class="fw-700"><i class="fa-regular fa-eye">
+							</i> ${data.total_view ? data.total_view : 'No View'}</span>
                         </div>
                         <!-- *total viwes -->
                         <div class="rating">
@@ -128,7 +128,7 @@ const displayNewsItem = (datas, name) => {
                             ></span>
                         </div>
                         <div class="details-btn">
-                            <button class="btn"  onclick="loadNewsDetail('${data._id}')">
+                            <button class="btn font-24"  onclick="loadNewsDetail('${data._id}')">
 								<i class="fa-solid fa-arrow-right"></i>
 							</button>
                         </div>
@@ -190,23 +190,24 @@ const displayNewsDetails = (data) => {
 						<h4 class="font-16 m-0 mb-1">
 							${data.author.name ? data.author.name : 'No data'}
 						</h4>
-						<h4 class="font-16 color-gray">${data.author.published_date}</h4>
+						<h4 class="font-16 color-gray">
+						${data.author.published_date ? data.author.published_date : 'No data'}</h4>
 					</div>
 				</div>
 				<!-- *total viwes -->
 				<div class="views">
-					<span class="fw-700"
-						><i class="fa-regular fa-eye"></i> ${data.total_view}</span
+					<span class="fw-700 color-primary"
+						><i class="fa-regular fa-eye"></i> ${data.total_view ? data.total_view : 'No View'}</span
 					>
 				</div>
 				<!-- *total viwes -->
 				<div class="rating">
-					<span class="fw-700">${data.rating.number}</span>
+					Rating: <span class="fw-700 color-primary">${data.rating.number}</span>
 				</div>
 			</div>
 		</div>
 		<div class="modal-footer">
-			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+			<button type="button" class="btn font-24" data-bs-dismiss="modal">
 				Close
 			</button>
 		</div>

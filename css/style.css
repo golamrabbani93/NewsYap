@@ -68,10 +68,10 @@ body{
     height: 40px;
     border-radius: 50%;
 }
-.details-btn>button{
+.details-btn>button,.modal-footer>button{
     color: #5D5FEF;
 }
-.details-btn>button:hover{
+.details-btn>button:hover,.modal-footer>button:hover{
     color: #5D5FEF;
 }
 

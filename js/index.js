@@ -90,7 +90,11 @@ const displayNewsItem = (datas, name) => {
             </div>
             <div class="col-md-10">
                 <div class="card-body p-3">
-                    <h5 class="card-title fw-700" onclick="loadNewsDetail('${data._id}')">
+                    <h5 class="card-title fw-700" 
+					onclick="loadNewsDetail('${data._id}')"type="button"
+					class="btn btn-primary"
+					data-bs-toggle="modal"
+					data-bs-target="#newsItemDetails">
 					${data.title}</h5>
                     <p class="card-text justify-text color-gray">${data.details.slice(0, 201)}</p>
                     <p class="card-text justify-text color-gray">
@@ -115,7 +119,7 @@ const displayNewsItem = (datas, name) => {
                         </div>
                         <!-- *total viwes -->
                         <div class="rating">
-                            <span class="fw-700">
+                            <span class="fw-700 text-warning">
                                 <i class="fa-regular fa-star-half-stroke"></i>
                                 <i class="fa-regular fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
@@ -143,5 +147,69 @@ const loadNewsDetail = async (newsId) => {
 	const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
 	const res = await fetch(url);
 	const data = await res.json();
-	console.log(data.data);
+	displayNewsDetails(data.data[0]);
+};
+
+const displayNewsDetails = (data) => {
+	console.log(data);
+	const modalContainer = document.getElementById('news-modal');
+	modalContainer.textContent = '';
+	const modal = document.createElement('div');
+	modal.classList.add('modal-content');
+	modal.innerHTML = `
+	
+		<button
+			type="button "
+			class="btn-close ms-auto me-2 mt-2"
+			data-bs-dismiss="modal"
+			aria-label="Close"
+		></button>
+		<div class="modal-header">
+			<div class="details-img">
+				<img
+					src="${data.image_url}"
+					alt=""
+					class="img-fluid d-block"
+				/>
+			</div>
+		</div>
+		<div class="modal-body">
+			<div class="detail-title">
+				<h5 class="font-24 pb-3">${data.title}</h5>
+			</div>
+			<div class="detail-intro">
+				<p class="font-16 color-gray justify-text">${data.details}</p>
+			</div>
+			<div class="post-details d-flex justify-content-around align-items-center">
+				<!-- *author Details -->
+				<div class="author d-flex align-items-center">
+					<div class="author-img">
+						<img src="${data.author.img}" alt="" />
+					</div>
+					<div class="author-details ms-2">
+						<h4 class="font-16 m-0 mb-1">
+							${data.author.name ? data.author.name : 'No data'}
+						</h4>
+						<h4 class="font-16 color-gray">${data.author.published_date}</h4>
+					</div>
+				</div>
+				<!-- *total viwes -->
+				<div class="views">
+					<span class="fw-700"
+						><i class="fa-regular fa-eye"></i> ${data.total_view}</span
+					>
+				</div>
+				<!-- *total viwes -->
+				<div class="rating">
+					<span class="fw-700">${data.rating.number}</span>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+				Close
+			</button>
+		</div>
+	`;
+	modalContainer.appendChild(modal);
 };

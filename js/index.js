@@ -91,7 +91,8 @@ const displayNewsItem = (datas, name) => {
             <div class="col-lg-10">
                 <div class="card-body pe-sm-3 pt-sm-4  pl">
                     <h5 class="card-title fw-700 font-24" 
-					onclick="loadNewsDetail('${data._id}')"type="button"
+					onclick="loadNewsDetail('${data._id}')"
+					type="button"
 					class="btn btn-primary"
 					data-bs-toggle="modal"
 					data-bs-target="#newsItemDetails">
@@ -129,8 +130,13 @@ const displayNewsItem = (datas, name) => {
                             ></span>
                         </div>
                         <div class="details-btn">
-                            <button class="btn font-24"  onclick="loadNewsDetail('${data._id}')">
-								<i class="fa-solid fa-arrow-right"></i>
+                            <button class="btn font-24" onclick="loadNewsDetail('${data._id}')"
+							type="button"
+							class="btn btn-primary"
+							data-bs-toggle="modal"
+							data-bs-target="#newsItemDetails">
+								<i class="fa-solid fa-arrow-right">
+								</i>
 							</button>
                         </div>
                     </div>

@@ -107,15 +107,15 @@ const displayNewsItem = (datas, name) => {
                             </div>
                             <div class="author-details ms-2">
                                 <h4 class="font-16 m-0 mb-1">
-                                ${data.author.name ? data.author.name : 'No data'}</h4>
+                                ${data.author.name ? data.author.name : 'No data Found'}</h4>
                                 <h4 class="font-16 color-gray">
-								${data.author.published_date ? data.author.published_date : 'No data'}</h4>
+								${data.author.published_date ? data.author.published_date : 'No data Found'}</h4>
                             </div>
                         </div>
                         <!-- *total viwes -->
                         <div class="views">
                             <span class="fw-700"><i class="fa-regular fa-eye">
-							</i> ${data.total_view ? data.total_view : 'No View'}</span>
+							</i> ${data.total_view ? data.total_view : 'No Data Found'}</span>
                         </div>
                         <!-- *total viwes -->
                         <div class="rating">
@@ -188,16 +188,16 @@ const displayNewsDetails = (data) => {
 					</div>
 					<div class="author-details ms-2">
 						<h4 class="font-16 m-0 mb-1">
-							${data.author.name ? data.author.name : 'No data'}
+							${data.author.name ? data.author.name : 'No data Found'}
 						</h4>
 						<h4 class="font-16 color-gray">
-						${data.author.published_date ? data.author.published_date : 'No data'}</h4>
+						${data.author.published_date ? data.author.published_date : 'No data Found'}</h4>
 					</div>
 				</div>
 				<!-- *total viwes -->
 				<div class="views">
 					<span class="fw-700 color-primary"
-						><i class="fa-regular fa-eye"></i> ${data.total_view ? data.total_view : 'No View'}</span
+						><i class="fa-regular fa-eye"></i> ${data.total_view ? data.total_view : 'No Data Found'}</span
 					>
 				</div>
 				<!-- *total viwes -->

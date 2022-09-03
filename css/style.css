@@ -55,6 +55,13 @@ body{
     margin-top: 3rem!important;
     border: 0!important;
 }
+.card-title{
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+.card-title:hover{
+    color: #5D5FEF;
+}
 .author-img>img{
     width: 40px;
     height: 40px;

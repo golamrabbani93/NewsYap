@@ -76,6 +76,7 @@ const displayNewsItem = (datas, name) => {
 
 	datas.forEach((data) => {
 		// *create single-card
+		// console.log();
 		const card = document.createElement('div');
 		card.classList.add('card');
 		card.innerHTML = `
@@ -89,7 +90,8 @@ const displayNewsItem = (datas, name) => {
             </div>
             <div class="col-md-10">
                 <div class="card-body p-3">
-                    <h5 class="card-title fw-700">${data.title}</h5>
+                    <h5 class="card-title fw-700" onclick="loadNewsDetail('${data._id}')">
+					${data.title}</h5>
                     <p class="card-text justify-text color-gray">${data.details.slice(0, 201)}</p>
                     <p class="card-text justify-text color-gray">
                     ${data.details.slice(200, 300)}....</p>
@@ -122,7 +124,9 @@ const displayNewsItem = (datas, name) => {
                             ></span>
                         </div>
                         <div class="details-btn">
-                            <button class="btn"><i class="fa-solid fa-arrow-right"></i></button>
+                            <button class="btn"  onclick="loadNewsDetail('${data._id}')">
+								<i class="fa-solid fa-arrow-right"></i>
+							</button>
                         </div>
                     </div>
                 </div>
@@ -132,4 +136,12 @@ const displayNewsItem = (datas, name) => {
 		cardContainer.appendChild(card);
 		spinner(false);
 	});
+};
+
+// *Load news detail data with news Id
+const loadNewsDetail = async (newsId) => {
+	const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
+	const res = await fetch(url);
+	const data = await res.json();
+	console.log(data.data);
 };

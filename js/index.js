@@ -81,7 +81,7 @@ const displayNewsItem = (datas, name) => {
 		card.classList.add('card');
 		card.innerHTML = `
         <div class="row g-0">
-            <div class="col-md-2">
+            <div class="col-md-2 text-center">
                 <img
                     src="${data.thumbnail_url}"
                     class="img-fluid rounded-start"
@@ -90,36 +90,37 @@ const displayNewsItem = (datas, name) => {
             </div>
             <div class="col-md-10">
                 <div class="card-body p-3">
-                    <h5 class="card-title fw-700" 
+                    <h5 class="card-title fw-700 font-24" 
 					onclick="loadNewsDetail('${data._id}')"type="button"
 					class="btn btn-primary"
 					data-bs-toggle="modal"
 					data-bs-target="#newsItemDetails">
 					${data.title}</h5>
-                    <p class="card-text justify-text color-gray">${data.details.slice(0, 201)}</p>
-                    <p class="card-text justify-text color-gray">
+                    <p class="card-text justify-text color-gray font-18">
+					${data.details.slice(0, 201)}</p>
+                    <p class="card-text justify-text color-gray font-18">
                     ${data.details.slice(200, 300)}....</p>
                     <div class="post-details d-flex justify-content-between align-items-center">
                         <!-- *author Details -->
-                        <div class="author d-flex align-items-center">
+                        <div class="author d-flex align-items-center ">
                             <div class="author-img">
                                 <img src="${data.author.img}" alt=""/>
                             </div>
                             <div class="author-details ms-2">
                                 <h4 class="font-16 m-0 mb-1">
                                 ${data.author.name ? data.author.name : 'No data Found'}</h4>
-                                <h4 class="font-16 color-gray">
+                                <h4 class="font-5 font-10 color-gray">
 								${data.author.published_date ? data.author.published_date : 'No data Found'}</h4>
                             </div>
                         </div>
                         <!-- *total viwes -->
                         <div class="views">
-                            <span class="fw-700"><i class="fa-regular fa-eye">
+                            <span class="fw-700 font-18"><i class="fa-regular fa-eye">
 							</i> ${data.total_view ? data.total_view : 'No Data Found'}</span>
                         </div>
                         <!-- *total viwes -->
                         <div class="rating">
-                            <span class="fw-700 text-warning">
+                            <span class="fw-700 text-warning font-16">
                                 <i class="fa-regular fa-star-half-stroke"></i>
                                 <i class="fa-regular fa-star"></i>
                                 <i class="fa-regular fa-star"></i>

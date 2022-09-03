@@ -1,8 +1,12 @@
 /* *google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+html{
+    box-sizing: border-box;
+}
 body{
     font-family: 'Roboto', sans-serif;
+    
 }
 
 /* *Common styles */
@@ -23,9 +27,9 @@ body{
 .font-18{
     font-size: 18px;
 }
-.font-24{
-    font-size: 24px;
-}
+/* .font-24{
+    font-size: 23px;
+} */
 
 .fw-400{
     font-weight: 400;
@@ -33,7 +37,9 @@ body{
 .fw-700{
     font-weight: 700;
 }
-
+.width{ 
+    width: 214px
+}
 /* *Header starts */
 .active-link{
     color: #5D5FEF;
@@ -55,6 +61,7 @@ body{
     margin-top: 3rem!important;
     border: 0!important;
     box-shadow: 1px 3px 10px #949494;
+    padding: 1rem;
 }
 .card-title{
     cursor: pointer;
@@ -81,7 +88,7 @@ body{
 /*
  *Responsive
  */
- @media (min-width: 998px) {
+ @media (min-width: 1024px)  {
     .font-10{
         font-size: 12px ;
     }
@@ -92,8 +99,11 @@ body{
 		font-size: 18px;
 	}
 	.font-24{
-        font-size:24px ;
+        font-size:20px ;
     }
+   .pl{
+    padding-left: 5rem;
+   }
 }
 @media (max-width: 768px) {
     .font-10{

@@ -81,15 +81,15 @@ const displayNewsItem = (datas, name) => {
 		card.classList.add('card');
 		card.innerHTML = `
         <div class="row g-0">
-            <div class="col-md-2 text-center">
+            <div class="col-lg-2 text-center">
                 <img
                     src="${data.thumbnail_url}"
-                    class="img-fluid rounded-start"
+                    class="width rounded-start"
                     alt="..."
                 />
             </div>
-            <div class="col-md-10">
-                <div class="card-body p-3">
+            <div class="col-lg-10">
+                <div class="card-body pe-sm-3 pt-sm-4 pt-lg-0 pl">
                     <h5 class="card-title fw-700 font-24" 
 					onclick="loadNewsDetail('${data._id}')"type="button"
 					class="btn btn-primary"

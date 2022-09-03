@@ -38,7 +38,7 @@ body{
     font-weight: 700;
 }
 .width{ 
-    width: 214px
+    width: 225px
 }
 /* *Header starts */
 .active-link{
@@ -103,6 +103,7 @@ body{
     }
    .pl{
     padding-left: 5rem;
+    
    }
 }
 @media (max-width: 768px) {

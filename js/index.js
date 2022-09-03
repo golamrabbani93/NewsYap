@@ -89,7 +89,7 @@ const displayNewsItem = (datas, name) => {
                 />
             </div>
             <div class="col-lg-10">
-                <div class="card-body pe-sm-3 pt-sm-4 pt-lg-0 pl">
+                <div class="card-body pe-sm-3 pt-sm-4  pl">
                     <h5 class="card-title fw-700 font-24" 
 					onclick="loadNewsDetail('${data._id}')"type="button"
 					class="btn btn-primary"
@@ -146,9 +146,13 @@ const displayNewsItem = (datas, name) => {
 // *Load news detail data with news Id
 const loadNewsDetail = async (newsId) => {
 	const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
-	const res = await fetch(url);
-	const data = await res.json();
-	displayNewsDetails(data.data[0]);
+	try {
+		const res = await fetch(url);
+		const data = await res.json();
+		displayNewsDetails(data.data[0]);
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 const displayNewsDetails = (data) => {
